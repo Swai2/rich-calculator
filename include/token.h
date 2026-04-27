@@ -11,15 +11,17 @@
  *  @bug    No known bugs.
  */
 
-typedef enum _TokenType
-{
-	TOKEN_NUM,
-  TOKEN_OPR,
-  TOKEN_DOT,
-  TOKEN_END
-} TokenType;
+#include <stdint.h>
 
-typedef struct _Token
+enum class TokenType : uint8_t
+{
+	NUM,
+  OPR,
+  DOT,
+  END
+};
+
+struct Token
 {
 	TokenType type;
 	union
@@ -27,4 +29,4 @@ typedef struct _Token
 		float number;
 		char operation;
 	};
-} Token;
+};
